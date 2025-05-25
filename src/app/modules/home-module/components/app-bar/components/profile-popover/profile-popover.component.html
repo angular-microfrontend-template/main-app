@@ -7,11 +7,14 @@
   @if (isOpenDropdown) {
   <div
     class="w-auto h-auto bg-white rounded-[8px] overflow-hidden shadow-lg border-[2px] border-gray-100 absolute top-[34px] right-0 flex flex-col items-start justify-start z-10" appClickOutside (clickOutside)="closeDropdown()">
-    <button type="button"
-      class="w-full h-auto px-[20px] py-[10px] cursor-pointer transition-all hover:bg-gray-100 border-b-[1px] border-gray-100 text-center text-[14px] leading-[20px] font-semibold text-black">
+    <button 
+      type="button"
+      class="w-full h-auto px-[20px] py-[10px] cursor-pointer transition-all hover:bg-gray-100 border-b-[1px] border-gray-100 text-center text-[14px] leading-[20px] font-semibold text-black"
+      (click)="goToProfilePage()"
+    >
       Profile
     </button>
-    <button type="button" class="w-full h-auto px-[20px] py-[10px] cursor-pointer transition-all hover:bg-gray-100 text-center text-[14px] leading-[20px] font-semibold text-black">
+    <button type="button" class="w-full h-auto px-[20px] py-[10px] cursor-pointer transition-all hover:bg-gray-100 text-center text-[14px] leading-[20px] font-semibold text-black" (click)="logout()">
       Logout
     </button>
   </div>

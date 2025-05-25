@@ -31,4 +31,8 @@ export class LocalStorageService {
     const decryptedData = this.decrypt(storageData);
     return JSON.parse(decryptedData);
   }
+
+  clearData(): void {
+    localStorage.clear();
+  }
 }

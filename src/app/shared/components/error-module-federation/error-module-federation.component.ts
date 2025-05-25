@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './error-module-federation.component.css'
 })
 export class ErrorModuleFederationComponent {
-
+  reloadPage(): void {
+    window.location.reload();
+  }
 }
