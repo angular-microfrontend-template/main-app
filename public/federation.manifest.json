@@ -1,3 +1,4 @@
 {
-	"dashboard-module": "http://localhost:9002/remoteEntry.json"
+	"dashboard-module": "http://localhost:9002/remoteEntry.json",
+	"profile-module": "http://localhost:9003/remoteEntry.json"
 }

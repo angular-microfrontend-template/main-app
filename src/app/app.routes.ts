@@ -12,5 +12,11 @@ export const routes: Routes = [
     loadComponent: () =>
       loadRemoteModule('dashboard-module', './Component')
         .then((m) => m.AppComponent),
-  }
+  },
+  {
+    path: 'profile',
+    loadComponent: () =>
+      loadRemoteModule('profile-module', './Component')
+        .then((m) => m.AppComponent),
+  },
 ];
