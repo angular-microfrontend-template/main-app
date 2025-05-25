@@ -1,13 +1,9 @@
 <div class="w-full h-auto min-h-screen max-h-screen flex items-start justify-start">
-  <div class="w-full h-full min-w-[280px] max-w-[280px] min-h-screen max-h-screen bg-linear-to-t from-sky-500 to-indigo-500 overflow-y-auto">
-    <p>Sidebar</p>
-  </div>
+  <app-side-bar></app-side-bar>
   <div class="w-full h-full min-h-screen max-h-screen flex flex-col items-start justify-start">
-    <div class="w-full h-full min-h-[54px] max-h-[54px] bg-white shadow-lg border-b-[2px] border-gray-100">
-      <p>Appbar</p>
-    </div>
-    <div class="w-full h-full min-h-[calc(100vh-54px)] max-h-[calc(100vh-54px)]">
-      <p>Container</p>
+    <app-app-bar class="w-full"></app-app-bar>
+    <div class="w-full h-full min-h-[calc(100vh-54px)] max-h-[calc(100vh-54px)] overflow-y-auto p-[25px]">
+      <router-outlet />
     </div>
   </div>
 </div>
