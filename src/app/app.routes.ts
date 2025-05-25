@@ -19,4 +19,10 @@ export const routes: Routes = [
       loadRemoteModule('profile-module', './Component')
         .then((m) => m.AppComponent),
   },
+  {
+    path: 'user-management',
+    loadComponent: () =>
+      loadRemoteModule('user-management-module', './Component')
+        .then((m) => m.AppComponent),
+  },
 ];
