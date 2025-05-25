@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="w-full h-auto">
+    <div class="w-full h-auto flex flex-col items-start justify-start gap-[8px]">
       @if (isSubmitLoading) {
       <button type="button" disabled
         class="w-full h-auto px-[20px] py-[10px] rounded-[8px] cursor-not-allowed bg-gray-500 text-center text-[14px] leading-[20px] font-semibold text-white">
@@ -67,6 +67,10 @@
         Login
       </button>
       }
+
+      <a routerLink="/register" class="text-left text-[14px] leading-[20px] font-semibold text-blue-500 cursor-pointer">
+        Register Account
+      </a>
     </div>
   </form>
 </div>

@@ -1,8 +1,5 @@
 import { loadRemoteModule } from '@angular-architects/native-federation';
 import { Routes } from '@angular/router';
-import { HomeModuleComponent } from './modules/home-module/home-module.component';
-import { LoginModuleComponent } from './modules/login-module/login-module.component';
-import { RegisterModuleComponent } from './modules/register-module/register-module.component';
 import { authGuard } from './core/guards/auth/auth.guard';
 
 export const routes: Routes = [
@@ -13,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    component: HomeModuleComponent,
+    loadComponent: () => import("./modules/home-module/home-module.component").then((m) => m.HomeModuleComponent),
     canActivate: [authGuard],
     children: [
       {
@@ -43,10 +40,10 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginModuleComponent
+    loadComponent: () => import("./modules/login-module/login-module.component").then((m) => m.LoginModuleComponent)
   },
   {
     path: 'register',
-    component: RegisterModuleComponent
+    loadComponent: () => import("./modules/register-module/register-module.component").then((m) => m.RegisterModuleComponent)
   }
 ];

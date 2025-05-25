@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { LocalStorageService } from '../../core/services/local-storage/local-storage.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-module',
   imports: [
     ReactiveFormsModule,
     FormsModule,
+    RouterModule
   ],
   providers: [LocalStorageService],
   templateUrl: './login-module.component.html',
