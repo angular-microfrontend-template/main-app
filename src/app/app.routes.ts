@@ -37,6 +37,13 @@ export const routes: Routes = [
             .catch(() => ErrorModuleFederationComponent)
       },
       {
+        path: 'report',
+        loadComponent: () =>
+          loadRemoteModule('report-module', './Component')
+            .then((m) => m.AppComponent)
+            .catch(() => ErrorModuleFederationComponent)
+      },
+      {
         path: 'user-management',
         loadComponent: () =>
           loadRemoteModule('user-management-module', './Component')
