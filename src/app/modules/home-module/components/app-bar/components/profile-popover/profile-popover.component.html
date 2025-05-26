@@ -1,22 +1,46 @@
 <div class="w-auto h-auto relative">
-  <button type="button" class="w-full h-full min-h-[24px] max-h-[24px] min-w-[24px] max-w-[24px] cursor-pointer" (click)="toggleDropdown()">
+  <button type="button" class="w-full h-full min-h-[24px] max-h-[24px] min-w-[24px] max-w-[24px] cursor-pointer"
+    (click)="toggleDropdown()">
     <img src="assets/images/icons/svg/perm_identity_24px_outlined.svg" alt="Person icon" loading="lazy"
       class="w-full h-full min-h-[24px] max-h-[24px] min-w-[24px] max-w-[24px]" />
   </button>
 
   @if (isOpenDropdown) {
   <div
-    class="w-auto h-auto bg-white rounded-[8px] overflow-hidden shadow-lg border-[2px] border-gray-100 absolute top-[34px] right-0 flex flex-col items-start justify-start z-10" appClickOutside (clickOutside)="closeDropdown()">
-    <button 
-      type="button"
-      class="w-full h-auto px-[20px] py-[10px] cursor-pointer transition-all hover:bg-gray-100 border-b-[1px] border-gray-100 text-center text-[14px] leading-[20px] font-semibold text-black"
-      (click)="goToProfilePage()"
-    >
-      Profile
-    </button>
-    <button type="button" class="w-full h-auto px-[20px] py-[10px] cursor-pointer transition-all hover:bg-gray-100 text-center text-[14px] leading-[20px] font-semibold text-black" (click)="logout()">
-      Logout
-    </button>
+    class="w-auto h-auto bg-white rounded-[8px] overflow-hidden shadow-lg border-[2px] border-gray-100 absolute top-[34px] right-0 flex flex-col items-start justify-start z-10 p-[20px] gap-[15px]"
+    appClickOutside (clickOutside)="closeDropdown()">
+    <div class="w-full h-auto flex items-start justify-start gap-[15px] border-b-[1px] border-gray-50">
+      <div class="w-full h-full min-w-[52px] max-w-[52px] min-h-[52px] max-h-[52px] rounded-full overflow-hidden">
+        <img src="assets/images/icons/png/empty_profile_image.png" alt="Empty profile image icon" loading="lazy"
+          class="w-full h-full min-w-[52px] max-w-[52px] min-h-[52px] max-h-[52px] rounded-full object-contain object-center" />
+      </div>
+      <div class="w-full h-auto flex flex-col items-start justify-start gap-[10px]">
+        <div class="w-full h-auto flex flex-col items-start justify-start">
+          <p class="text-left text-[16px] leading-[24px] text-black font-semibold text-nowrap">
+            Account Name
+          </p>
+          <p class="text-left text-[14px] leading-[20px] text-black">
+            Email
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w-full h-auto flex items-center justify-start gap-[15px]">
+      <button type="button"
+        class="w-full h-auto min-w-[140px] max-w-[140px] px-[10px] py-[5px] cursor-pointer text-center text-[12px] leading-[16px] font-semibold text-black text-nowrap rounded-[8px] border-[1px] border-black flex items-center justify-center gap-[8px] transition-all hover:bg-gray-100"
+        (click)="goToProfilePage()">
+        <img src="assets/images/icons/svg/settings_24px_outlined.svg" alt="Settings icon" loading="lazy"
+          class="w-full h-full min-h-[16px] max-h-[16px] min-w-[16px] max-w-[16px]" />
+        <span>
+          Account Center
+        </span>
+      </button>
+      <button type="button"
+        class="w-full h-auto min-w-[140px] max-w-[140px] px-[10px] py-[5px] cursor-pointer text-center text-[12px] leading-[16px] font-semibold text-nowrap rounded-[8px] bg-red-100 text-red-500 transition-all hover:bg-red-200 hover:border-red-200 border-[1px] border-red-100"
+        (click)="logout()">
+        Logout
+      </button>
+    </div>
   </div>
   }
 </div>
