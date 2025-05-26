@@ -11,7 +11,10 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    loadComponent: () => import("./modules/home-module/home-module.component").then((m) => m.HomeModuleComponent),
+    loadComponent: () =>
+      import("./modules/home-module/home-module.component")
+        .then((m) => m.HomeModuleComponent)
+        .catch(() => ErrorModuleFederationComponent),
     canActivate: [authGuard],
     children: [
       {
@@ -24,21 +27,21 @@ export const routes: Routes = [
         loadComponent: () =>
           loadRemoteModule('dashboard-module', './Component')
             .then((m) => m.AppComponent)
-            .catch(() => ErrorModuleFederationComponent),
+            .catch(() => ErrorModuleFederationComponent)
       },
       {
         path: 'profile',
         loadComponent: () =>
           loadRemoteModule('profile-module', './Component')
             .then((m) => m.AppComponent)
-            .catch(() => ErrorModuleFederationComponent),
+            .catch(() => ErrorModuleFederationComponent)
       },
       {
         path: 'user-management',
         loadComponent: () =>
           loadRemoteModule('user-management-module', './Component')
             .then((m) => m.AppComponent)
-            .catch(() => ErrorModuleFederationComponent),
+            .catch(() => ErrorModuleFederationComponent)
       },
       {
         path: '**',
@@ -52,12 +55,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import("./modules/login-module/login-module.component")
         .then((m) => m.LoginModuleComponent)
+        .catch(() => ErrorModuleFederationComponent)
   },
   {
     path: 'register',
     loadComponent: () =>
       import("./modules/register-module/register-module.component")
         .then((m) => m.RegisterModuleComponent)
+        .catch(() => ErrorModuleFederationComponent)
   },
   {
     path: '**',
